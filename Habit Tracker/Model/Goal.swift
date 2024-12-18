@@ -16,10 +16,10 @@ final class Goal {
     var dateCompleted: Date?
     var timePeriodToComplete: String
     var isAchieved: Bool
-    @Relationship(deleteRule: .nullify) var categories: [Category]
+    var categories: String
     var notes: String?
     
-    init(name: String, miniDescription: String, dateStarted: Date, dateCompleted: Date? = nil, timePeriodToComplete: String, isAchieved: Bool, categories: [Category], notes: String? = nil) {
+    init(name: String, miniDescription: String, dateStarted: Date, dateCompleted: Date? = nil, timePeriodToComplete: String, isAchieved: Bool, categories: String, notes: String? = nil) {
         self.name = name
         self.miniDescription = miniDescription
         self.dateStarted = dateStarted

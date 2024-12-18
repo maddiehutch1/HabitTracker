@@ -26,7 +26,7 @@ struct GoalDetailView: View {
             }
 
             Text(goal.timePeriodToComplete)
-            //Text(goal.categories)
+            Text(goal.categories)
         }
         .navigationTitle(goal.name)
         .toolbar {

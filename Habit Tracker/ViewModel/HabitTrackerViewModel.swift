@@ -25,6 +25,13 @@ class HabitTrackerViewModel {
     // MARK: - Model Access
     
     private(set) var goals: [Goal] = []
+    private(set) var categories: [String] = []
+    
+    func goalCategories(for category: String) -> [Goal] {
+        return goals.filter {
+            $0.categories.lowercased().contains(category.lowercased())
+        }
+    }
     
     // MARK: - User Intents
     
@@ -53,6 +60,7 @@ class HabitTrackerViewModel {
         saveAllChanges()
         
         fetchGoals()
+        gatherCategories()
     }
     
     private func fetchGoals() {
@@ -65,6 +73,24 @@ class HabitTrackerViewModel {
         } catch {
             print("Failed to fetch goals: \(error)")
         }
+    }
+    
+    private func gatherCategories() {
+        var listOfCategories: Set<String> = []
+        
+        goals.forEach { goal in
+            let categoryPieces = goal.categories.split(separator: ",")
+            
+            categoryPieces.forEach { category in
+                let canonicalCategory = category.trimmingCharacters(in: .whitespacesAndNewlines).capitalized
+                
+                if !listOfCategories.contains(canonicalCategory) {
+                    listOfCategories.insert(canonicalCategory)
+                }
+            }
+        }
+        
+        categories = Array(listOfCategories).sorted()
     }
     
     func saveAllChanges() {

@@ -20,7 +20,7 @@ struct AddEditGoalSheet: View {
         dateCompleted: nil,
         timePeriodToComplete: "",
         isAchieved: false,
-        categories: [],
+        categories: "",
         notes: ""
     )
     
@@ -60,6 +60,13 @@ struct AddEditGoalSheet: View {
                                        }
                                    ),
                                    displayedComponents: .date)
+                    }
+                    
+                    Picker("Category", selection: $goal.categories) {
+                        Text("Spiritual").tag("Spritual")
+                        Text("Intellectual").tag("Intellectual")
+                        Text("Physical").tag("Physical")
+                        Text("Social").tag("Social")
                     }
                     
                     TextField("Time Period", text: $goal.timePeriodToComplete)

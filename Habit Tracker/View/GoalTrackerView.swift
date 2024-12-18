@@ -23,7 +23,16 @@ struct GoalTrackerView: View {
                 }
                 
                 Section(header: Text("CATEGORIES")) {
-                    
+                    ForEach(viewModel.categories, id: \.self) { category in
+                        NavigationLink(
+                            destination: goalsList(
+                                for: viewModel.goalCategories(for: category),
+                                with: "\(category) Goals")
+                            )
+                        {
+                            Text(category)
+                        }
+                    }
                 }
             }
             .sheet(isPresented: $displayAddEditSheet) {
