@@ -12,7 +12,7 @@ import SwiftData
 struct Habit_TrackerApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Goal.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +25,7 @@ struct Habit_TrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GoalTrackerView()
         }
         .modelContainer(sharedModelContainer)
     }
