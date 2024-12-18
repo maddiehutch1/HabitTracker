@@ -27,7 +27,7 @@ struct GoalTrackerView: View {
                 }
             }
             .sheet(isPresented: $displayAddEditSheet) {
-                AddEditGoalSheet()
+                AddEditGoalSheet(editSetGoal: nil)
             }
         } content: {
             goalsList(for: viewModel.goals, with: "Habit Tracker")
