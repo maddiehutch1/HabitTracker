@@ -8,6 +8,9 @@
 import SwiftUI
 import SwiftData
 
+// I ASSUMED THAT THIS APP WOULD START WITHOUT ANY DATA AS ONE's GOALS ARE
+// DIFFERENT FROM ANOTHER's
+
 struct GoalTrackerView: View {
     @Environment(HabitTrackerViewModel.self) private var viewModel
 
