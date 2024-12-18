@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct GoalDetailView: View {
+    
+    @Bindable var goal: Goal
+    @Environment(HabitTrackerViewModel.self) private var viewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Text(goal.miniDescription)
+        }
+        .navigationTitle(goal.name)
     }
-}
-
-#Preview {
-    GoalDetailView()
 }

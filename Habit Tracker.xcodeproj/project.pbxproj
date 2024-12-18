@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		FC75C1112D13121B00B05447 /* Habit Tracker */ = {
+		FC75C1672D1318AA00B05447 /* Habit Tracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Habit Tracker";
 			sourceTree = "<group>";
@@ -32,7 +32,7 @@
 		FC75C1062D13121A00B05447 = {
 			isa = PBXGroup;
 			children = (
-				FC75C1112D13121B00B05447 /* Habit Tracker */,
+				FC75C1672D1318AA00B05447 /* Habit Tracker */,
 				FC75C1102D13121B00B05447 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				FC75C1112D13121B00B05447 /* Habit Tracker */,
+				FC75C1672D1318AA00B05447 /* Habit Tracker */,
 			);
 			name = "Habit Tracker";
 			packageProductDependencies = (
